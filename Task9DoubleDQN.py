@@ -26,20 +26,20 @@ config = DQNConfig().environment(
     lr=1e-4,
     train_batch_size=32,
     gamma=0.99,
-    double_q=True,  # Enable Double Q-learning
-    dueling=False,  # Disable Dueling Network
+    double_q=True, 
+    dueling=False,  
     target_network_update_freq=500,
     replay_buffer_config={
         "type": "ReplayBuffer",
         "capacity": 50000,
     }
 ).resources(
-    num_gpus=0  # Set based on your hardware
+    num_gpus=1  
 ).framework(
     "torch"
 )
 
-# Set exploration configuration separately
+# Set exploration configuration 
 config.exploration(
     exploration_config={
         "type": "EpsilonGreedy",
