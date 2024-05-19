@@ -58,13 +58,13 @@ trainer = DQN(config=config_dict)
 
 # Training loop
 episode_rewards = []
-for i in range(100):
+for i in range(1000):
     result = trainer.train()
     episode_rewards.append(result['episode_reward_mean'])
     print(f"Episode {i}: reward: {result['episode_reward_mean']}")
-    if i % 10 == 0:
+    if i % 100 == 0:
         checkpoint = trainer.save()
-        print(f"Checkpoint saved at {checkpoint}")
+        print(f"Checkpoint saved at {checkpoint}"
 
 # Shutdown Ray
 ray.shutdown()
