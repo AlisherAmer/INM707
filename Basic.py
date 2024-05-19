@@ -79,12 +79,12 @@ class TaxiEnv:
         elif action == "drop_off":
             if self.taxi_position == self.destination and self.has_passenger:
                 reward = 20  # successfully dropped off passenger
-                done = True  # end the episode
+                done = True  
                 if episode % 100 == 0:
                     print(f"Successful drop off at step {steps}: State: {self.taxi_position}, Reward: {reward}, Done: {done}")
             else:
                 reward = -10  # tried to drop off at wrong location
-                done = False  # do not end the episode
+                done = False  
             return (self.taxi_position, self.passenger_position, self.has_passenger), reward, done
 
         new_position = (row, col)
@@ -156,7 +156,7 @@ class QLearningAgent:
 
     def train(self):
         rewards = []
-        for episode in range(self.episodes):  # Train for the specified number of episodes
+        for episode in range(self.episodes): 
             state = self.env.reset()
             total_rewards = 0
             done = False
@@ -260,7 +260,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import torch
 
-# Taxi Environment Definition
+# Taxi Environment 
 class TaxiEnv:
     def __init__(self, size=6):
         self.size = size
@@ -336,12 +336,12 @@ class TaxiEnv:
         elif action == "drop_off":
             if self.taxi_position == self.destination and self.has_passenger:
                 reward = 20  # successfully dropped off passenger
-                done = True  # end the episode
+                done = True  
                 if episode % 100 == 0:
                     print(f"Successful drop off at step {steps}: State: {self.taxi_position}, Reward: {reward}, Done: {done}")
             else:
                 reward = -10  # tried to drop off at wrong location
-                done = False  # do not end the episode
+                done = False  
             return (self.taxi_position, self.passenger_position, self.has_passenger), reward, done
 
         new_position = (row, col)
@@ -413,7 +413,7 @@ class QLearningAgent:
 
     def train(self):
         rewards = []
-        for episode in range(self.episodes):  # Train for the specified number of episodes
+        for episode in range(self.episodes): 
             state = self.env.reset()
             total_rewards = 0
             done = False
@@ -458,7 +458,7 @@ gamma_values = [0.9]
 # Store results for each combination 
 results = []
 
-# Loop through each combination of alpha and gamma
+# Loop through each combination
 for alpha in alpha_values:
     for gamma in gamma_values:
         print(f"Training with alpha={alpha} and gamma={gamma}")
