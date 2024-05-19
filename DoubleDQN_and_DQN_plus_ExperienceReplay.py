@@ -223,7 +223,7 @@ class DeepQAgent:
 # Environment setup
 env = gym.make('Pendulum-v1')
 n_observations = env.observation_space.shape[0]
-action_space = np.linspace(env.action_space.low[0], env.action_space.high[0], 5)  # Discretize the action space
+action_space = np.linspace(env.action_space.low[0], env.action_space.high[0], 5)
 n_actions = len(action_space)
 
 # Hyperparameters
